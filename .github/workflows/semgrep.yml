@@ -27,7 +27,7 @@ jobs:
 
     - name: Run script on pull request
       if: github.event_name == 'pull_request'
-    - run: |
+      run: |
         echo "Running semgrep and dumping results to JSON file"
         semgrep ci --json --output report.json || true
         json_file=report.json
